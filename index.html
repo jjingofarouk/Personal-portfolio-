@@ -8,12 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2C3E50;
-            --secondary-color: #34495E;
-            --accent-color: #3498DB;
-            --text-color: #ECF0F1;
-            --bg-color: #1A1A2E;
-            --light-accent: #4A69BD;
+            --primary-color: #4A4A4A; /* Gray */
+            --secondary-color: #B8B8B8; /* Light Gray */
+            --accent-color: #D6C2A3; /* Beige */
+            --text-color: #333333; /* Dark Gray */
+            --bg-color: #F5F5F5; /* White Smoke */
+            --light-accent: #EDE6DB; /* Very Light Beige */
         }
 
         * {
@@ -33,19 +33,18 @@
         }
 
         header {
-            background-color: rgba(26, 26, 46, 0.8);
-            backdrop-filter: blur(10px);
+            background-color: var(--light-accent);
             padding: 15px 0;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         header.scrolled {
-            background-color: rgba(26, 26, 46, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--accent-color);
         }
 
         nav ul {
@@ -67,7 +66,7 @@
         }
 
         nav ul li a:hover {
-            color: var(--accent-color);
+            color: var(--primary-color);
         }
 
         #hero {
@@ -76,7 +75,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+            background: var(--bg-color);
             padding: 50px 0;
             position: relative;
             overflow: hidden;
@@ -103,9 +102,9 @@
             font-size: 4rem;
             margin-bottom: 20px;
             letter-spacing: 2px;
-            color: var(--text-color);
+            color: var(--primary-color);
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         #hero h2 {
@@ -118,7 +117,7 @@
 
         .btn {
             display: inline-block;
-            background-color: var(--accent-color);
+            background-color: var(--primary-color);
             color: var(--bg-color);
             padding: 12px 30px;
             text-decoration: none;
@@ -128,13 +127,13 @@
             font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 4px 6px rgba(52, 52, 52, 0.3);
         }
 
         .btn:hover {
-            background-color: #2980B9;
+            background-color: var(--secondary-color);
             transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
+            box-shadow: 0 6px 8px rgba(52, 52, 52, 0.4);
         }
 
         .main-content {
@@ -145,12 +144,13 @@
 
         section {
             padding: 80px 0;
+            background-color: var(--bg-color);
         }
 
         h2 {
             text-align: center;
             margin-bottom: 40px;
-            color: var(--accent-color);
+            color: var(--primary-color);
             font-size: 2.5rem;
             font-weight: 700;
             position: relative;
@@ -165,7 +165,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background-color: var(--accent-color);
+            background-color: var(--primary-color);
         }
 
         #about p {
@@ -182,10 +182,10 @@
         }
 
         .skill-item {
-            background-color: var(--secondary-color);
-            color: var(--text-color);
+            background-color: var(--accent-color);
+            color: var(--primary-color);
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 25px;
             max-width: 200px;
             min-width: 150px;
@@ -199,8 +199,8 @@
 
         .skill-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-            background-color: var(--accent-color);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            background-color: var(--light-accent);
         }
 
         .projects-grid {
@@ -210,9 +210,9 @@
         }
 
         .project-item {
-            background-color: var(--secondary-color);
+            background-color: var(--accent-color);
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: transform 0.3s ease;
         }
@@ -226,7 +226,7 @@
         }
 
         .project-item h3 {
-            color: var(--accent-color);
+            color: var(--primary-color);
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
@@ -249,19 +249,19 @@
             padding: 15px;
             border: none;
             border-radius: 10px;
-            background-color: var(--secondary-color);
+            background-color: var(--light-accent);
             color: var(--text-color);
             font-size: 1rem;
         }
 
         #contact form input::placeholder,
         #contact form textarea::placeholder {
-            color: #95A5A6;
+            color: var(--primary-color);
         }
 
         #contact form button {
             display: inline-block;
-            background-color: var(--accent-color);
+            background-color: var(--primary-color);
             color: var(--bg-color);
             padding: 15px 30px;
             text-decoration: none;
@@ -276,12 +276,12 @@
         }
 
         #contact form button:hover {
-            background-color: #2980B9;
+            background-color: var(--secondary-color);
             transform: translateY(-2px);
         }
 
         footer {
-            background-color: var(--secondary-color);
+            background-color: var(--light-accent);
             color: var(--text-color);
             text-align: center;
             padding: 20px 0;
@@ -320,16 +320,15 @@
             }
 
             #hero h2 {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
 
             h2 {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
 
             .skill-item {
-                min-width: 110px;
-                font-size: 1rem;
+                min-width: 100px;
             }
 
             nav ul {
@@ -348,7 +347,6 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -357,89 +355,68 @@
         </nav>
     </header>
 
-    <section id="hero">
+    <div id="hero">
         <div class="container">
             <h1>Farouk Jjingo</h1>
-            <h2>Full-stack Developer</h2>
-            <a href="#contact" class="btn">Get in Touch</a>
+            <h2>Professional Web Developer</h2>
+            <a href="#about" class="btn">Learn More</a>
         </div>
-    </section>
+    </div>
 
     <div class="main-content">
         <section id="about">
-            <div class="container">
-                <h2>About</h2>
-                <p>Let's create something amazing together. I'm a dedicated web developer with five years of experience turning ideas into reality. My skill set spans both front-end and back-end development. Back in 2021, I decided to try my hand at creating an application that would connect patients with communicable diseases but living in remote areas to available health workers. Fast-forward to today, and I've had the privilege of successfully building this and more socially impactful software solutions that will benefit millions of people.</p>
-                <p>I'm currently dedicated to pioneering a revolutionary healthcare solution. My focus is on developing a secure, decentralized network that enables seamless exchange of health data between institutions. In parallel, I'm building a cutting-edge predictive health analytics engine. By leveraging vast datasets on genetics, lifestyle, and environmental factors, this engine aims to accurately predict disease risks and empower proactive preventive measures.</p>
-                <p>When I'm not engrossed in the digital world, I find joy in giving back to my community. I volunteer my time to provide basic healthcare and health education to those in need. Beyond that, I'm a passionate chess player, enjoying the strategic challenge with my wife. And when I'm not immersed in these activities, I'm often found exploring the latest medical advancements at the regional referral hospital. To top it off, I'm dedicated to several other social impact projects, which occupy a significant portion of my time.</p>
-            </div>
+            <h2>About Me</h2>
+            <p>
+                I am Farouk Jjingo, a passionate web developer with a strong focus on creating seamless, responsive, and
+                user-friendly web experiences. With a background in both front-end and back-end development, I enjoy
+                building websites that not only look great but also provide a smooth user experience.
+            </p>
         </section>
 
         <section id="skills">
-            <div class="container">
-                <h2>Experience</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">HTML5</div>
-                    <div class="skill-item">CSS3</div>
-                    <div class="skill-item">JavaScript</div>
-                    <div class="skill-item">React</div>
-                    <div class="skill-item">Node.js</div>
-                    <div class="skill-item">Python</div>
-                </div>
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">HTML</div>
+                <div class="skill-item">CSS</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">Python</div>
             </div>
         </section>
 
         <section id="projects">
-            <div class="container">
-                <h2>Featured Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-item">
-                        <div class="project-info">
-                            <h3>Symptom Checker</h3>
-                            <p>Python-based application designed to assist you in identifying potential health concerns based on your reported symptoms. Guiding users through a series of questions, the program provides a preliminary assessment of possible conditions and offers suggestions for further action.</p>
-                        </div>
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h3>Project One</h3>
+                        <p>Project description goes here.</p>
                     </div>
-                    <div class="project-item">
-                        <div class="project-info">
-                            <h3>Task Management App</h3>
-                            <p>A React-based task management application with real-time updates and team collaboration features.</p>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-info">
-                            <h3>Portfolio Website</h3>
-                            <p>A custom-built portfolio website showcasing my skills and projects, featuring smooth animations and a sleek design.</p>
-                        </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-info">
+                        <h3>Project Two</h3>
+                        <p>Project description goes here.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <div class="container">
-                <h2>Get in Touch</h2>
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea rows="5" placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </section>
     </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Farouk Jjingo. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Farouk Jjingo. All rights reserved.</p>
     </footer>
-
-    <script>
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
-    </script>
 </body>
 
 </html>
